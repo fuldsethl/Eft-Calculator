@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFT Calculator</title>
+</head>
+<body>
+    <h1>EFT Calculator</h1>
+    <form id="eft-form">
+        <label for="amount">Enter Amount:</label>
+        <input type="text" id="amount" name="amount" required>
+        <button type="submit">Calculate EFT</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.getElementById('eft-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const amount = parseFloat(document.getElementById('amount').value);
+            const eftValue = calculateEFT(amount);
+            document.getElementById('result').innerText = `EFT Value: $${eftValue.toFixed(2)}`;
+        });
+
+        function calculateEFT(amount) {
+            // Placeholder for EFT calculation logic
+            return amount * 1.1; // Example calculation
+        }
+    </script>
+</body>
+</html>
